@@ -24,22 +24,22 @@ build:
 
 requirements:
   host:
-    - pip
-    - python ${{ python_min }}.*
     - packaging >=24.2
     - pathspec >=0.10.1
+    - pip
     - pluggy >=1.0.0
+    - python ${{ python_min }}.*
     - tomli >=1.2.2
     - trove-classifiers
   run:
-    - python >=${{ python_min }}
-    - editables >=0.3
     - packaging >=24.2
     - pathspec >=0.10.1
     - pluggy >=1.0.0
     - python >=${{ python_min }}
     - tomli >=1.2.2
     - trove-classifiers
+    # undeclared, but breaks editable installs without
+    - editables >=0.3
 
 tests:
   - python:
@@ -65,3 +65,4 @@ about:
 extra:
   recipe-maintainers:
     - ofek
+    - bollwyvl
